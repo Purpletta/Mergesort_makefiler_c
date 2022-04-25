@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compar(int *elem1, int *elem2) {
-    if (*elem1 < *elem2) {
+int compar(int *firstitem, int *seconditem) {
+    if (*firstitem < *seconditem) {
         return 1;
-    } else if (*elem1 > *elem2){
+    } else if (*firstitem > *seconditem){
         return 0;
     } else{
         return 2;
@@ -58,14 +58,14 @@ void merge(int *a, size_t num, size_t size, int (*compar)(int *, int *)) {
 }
 
 int main() {
-    int a[8];
-    for (int i = 0; i < 8; i++)
+    int a[5];
+    for (int i = 0; i < 5; i++)
         a[i] = rand() % 20 - 10;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 5; i++)
         printf("%d ", a[i]);
     printf("\n");
-    merge(a, 8, sizeof(int), (int (*)(int *, int *)) compar);
-    for (int i = 0; i < 8; i++)
+    merge(a, 5, sizeof(int), (int (*)(int *, int *)) compar);
+    for (int i = 0; i < 5; i++)
         printf("%d ", a[i]);
     printf("\n");
     getchar();
