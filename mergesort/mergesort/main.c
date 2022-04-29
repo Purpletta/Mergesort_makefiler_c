@@ -56,19 +56,48 @@ void merge(int *a, size_t num, size_t size, int (*compar)(int *, int *)) {
         }
     }
 }
-
-int main() {
+void some_tests() {
+   
     int a[5];
+    int b[8];
+    int c[15];
+    printf("unsorted array:\n");
     for (int i = 0; i < 5; i++)
         a[i] = rand() % 20 - 10;
     for (int i = 0; i < 5; i++)
         printf("%d ", a[i]);
     printf("\n");
+    printf("sorted array:\n");
     merge(a, 5, sizeof(int), (int (*)(int *, int *)) compar);
     for (int i = 0; i < 5; i++)
         printf("%d ", a[i]);
     printf("\n");
-    getchar();
+    printf("unsorted array:\n");
+    for (int j = 0; j < 8; j++)
+        b[j] = rand() % 20 - 10;
+    for (int j = 0; j < 8; j++)
+        printf("%d ", b[j]);
+    printf("\n");
+    printf("sorted array:\n");
+    merge(b, 8, sizeof(int), (int (*)(int *, int *)) compar);
+    for (int j = 0; j < 8; j++)
+        printf("%d ", b[j]);
+    printf("\n");
+     printf("unsorted array:\n");
+    for (int k = 0; k < 15; k++)
+        c[k] = rand() % 20 - 10;
+    for (int k = 0; k < 15; k++)
+        printf("%d ", c[k]);
+    printf("\n");
+    printf("sorted array:\n");
+    merge(c, 15, sizeof(int), (int (*)(int *, int *)) compar);
+    for (int k = 0; k < 15; k++)
+        printf("%d ", c[k]);
+    printf("\n");
+    getchar();}
 
-    return 0;
-}
+int main() {
+   
+    some_tests();
+
+    return 0; }
